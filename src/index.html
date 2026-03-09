@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Simple Node Graph</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jerosoler/Drawflow/dist/drawflow.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(event)">
+            <button onclick="document.getElementById('import-file').click()">Import</button>
+			<button onclick="exportData()">Export</button>
+		</header>
+		
+		<div id="drawflow" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<button class="add-node-btn" onclick="addMarkdownNode()" title="Add node">Add<br>node</button>
+
+		<script src="https://cdn.jsdelivr.net/gh/jerosoler/Drawflow/dist/drawflow.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
